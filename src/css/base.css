@@ -411,7 +411,7 @@ img {
       (evita que as abas encostem no primeiro card ao quebrar linha) */
 @media (max-width: 980px) {
     .main {
-        padding-top: 8px;
+        margin-top: 15rem;
     }
 }
 
