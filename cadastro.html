@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="src/css/base.css">
+    <link rel="stylesheet" href="src/css/cadastro.css">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="src/js/core.js"></script>
+    <script defer src="src/js/cadastro.js"></script>
+</head>
+
+<body>
+    <header class="topbar-app">
+        <div class="brand-mini"><img src="src/assets/logo.png" alt=""><b>SARV</b></div>
+        <div class="grow"></div>
+        <a class="btn small" href="index.html">Login</a>
+    </header>
+
+    <main class="main">
+        <div class="signup-box">
+            <h1>Criar conta</h1>
+            <p class="hint">Use e-mail institucional <b>@eb.mil.br</b></p>
+            <form id="cadForm" class="form" novalidate>
+                <div class="row">
+                    <div><label>Nome completo</label><input name="nome" required></div>
+                    <div><label>Nome de guerra</label><input name="nome_guerra" required placeholder="Ex.: MARQUES">
+                    </div>
+                </div>
+                <div class="row">
+                    <div><label>Posto/Graduação</label>
+                        <select name="pg" required>
+                            <option value="">Selecione…</option>
+                            <option>Sd</option>
+                            <option>Cb</option>
+                            <option>3º Sgt</option>
+                            <option>2º Sgt</option>
+                            <option>1º Sgt</option>
+                            <option>Sub Ten</option>
+                            <option>Asp</option>
+                            <option>2º Ten</option>
+                            <option>1º Ten</option>
+                            <option>Cap</option>
+                            <option>Maj</option>
+                            <option>Ten Cel</option>
+                            <option>Cel</option>
+                        </select>
+                    </div>
+                </div>
+                <div><label>E-mail (@eb.mil.br)</label><input name="email" type="email" required></div>
+                <div class="row">
+                    <div><label>Senha</label><input name="senha" type="password" minlength="6" required></div>
+                    <div><label>Confirmar senha</label><input name="confirm" type="password" minlength="6" required>
+                    </div>
+                </div>
+                <button class="btn">Criar conta</button>
+            </form>
+        </div>
+    </main>
+
+    <div id="toast" class="toast"></div>
+</body>
+
+</html>

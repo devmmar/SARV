@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Relatórios</title>
+    <link rel="stylesheet" href="src/css/base.css">
+    <link rel="stylesheet" href="src/css/relatorios.css">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="src/js/core.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script defer src="src/js/relatorios.js"></script>
+</head>
+
+<body>
+    <div class="interface">
+        <header class="topbar-app">
+            <div class="brand-mini"><img src="src/assets/logo.png"><b>SARV</b></div>
+            <div class="pill" id="sessionPill"></div>
+            <nav class="bottom">
+                <div class="tabs-bottom">
+                    <a class="active" href="home.html">Início</a>
+                    <a href="arranchamento.html">Refeições</a>
+                    <a href="relatorios.html">Relatórios</a>
+                    <a href="perfil.html">Perfil</a>
+                </div>
+            </nav>
+            <button id="logoutBtn" class="btn small">Sair</button>
+        </header>
+    </div>
+
+    <main class="main">
+        <section class="card">
+            <div class="head"><b>Reservas Pendentes</b></div>
+            <div class="body">
+                <div id="pendentes" class="list"></div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="head"><b>Relatório de hoje</b></div>
+            <div class="body">
+                <button class="btn" id="gerarHoje">Gerar consolidado</button>
+                <div id="hojeResumo" class="helper"></div>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="head"><b>Exportar Excel — Arranchamentos</b></div>
+            <div class="body">
+                <div class="row" style="margin-bottom:10px">
+                    <div><label>Data inicial</label><input type="date" id="excelIni"></div>
+                    <div><label>Data final</label><input type="date" id="excelFim"></div>
+                    <div><label>Status</label>
+                        <select id="excelStatus">
+                            <option value="PENDENTE">PENDENTE</option>
+                            <option value="DEFERIDA">DEFERIDA</option>
+                            <option value="INDEFERIDA">INDEFERIDA</option>
+                            <option value="CANCELADA">CANCELADA</option>
+                            <option value="TODOS">Todos (exc. cancelada)</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="btn" id="btnExcel">Baixar Excel</button>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+</body>
+
+</html>

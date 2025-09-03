@@ -1,0 +1,29 @@
+/* ====== Meu Perfil ====== */
+
+#perfilForm .row>div {
+    display: flex;
+    flex-direction: column
+}
+
+#perfilForm button.btn {
+    margin-top: 4px
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px
+}
+
+.avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #0e1730;
+    border: 1px solid #213669;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #cbd4ff
+}

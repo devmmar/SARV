@@ -1,0 +1,446 @@
+/* ========= Reset & tema ========= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    font: 500 15px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Arial;
+    background-image: url("../assets/fundo.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #eaf2ff;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --stroke: #1a2d52;
+    --card: #0b1730;
+    --card2: #0e1b38;
+    --accent: #0ea5ff;
+    --accent-2: #3b82f6;
+    --muted: #bcd0ffcc;
+    --danger: #e54848;
+    --ok: #11b26b;
+    --warn: #f1b400;
+    --container: 1200px;
+}
+
+/* ========= Componentes comuns ========= */
+.topbar-app {
+    position: fixed;
+    /* fixa na viewport */
+    top: 0;
+    left: 0;
+    right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding-inline: max(12px, calc((100vw - var(--container)) / 2 + 12px));
+    padding-block: 10px;
+
+    background: rgba(15, 23, 42, 0.35);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+
+    z-index: 1000;
+}
+
+.interface {
+    max-width: 90rem;
+    margin: 0 auto;
+}
+
+.brand-mini {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+.brand-mini img {
+    width: 4rem;
+}
+
+.pill {
+    padding: 6px 10px;
+    border-radius: 999px;
+    border: 1px solid #1a477a;
+    background: #0b2a4a;
+    color: #d4e6ff;
+    font-size: .9rem;
+    white-space: nowrap;
+}
+
+.grow {
+    flex: 1
+}
+
+.btn {
+    display: inline-block;
+    padding: 10px 14px;
+    border: 0;
+    cursor: pointer;
+    border-radius: 999px;
+    color: #fff;
+    font-weight: 800;
+    background: linear-gradient(180deg, #1155ff, #0d46d4);
+    transition: transform .12s ease, box-shadow .12s ease, opacity .12s ease;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .25), inset 0 1px 0 rgba(255, 255, 255, .08);
+}
+
+.btn:hover {
+    transform: translateY(-1px)
+}
+
+.btn.small {
+    padding: 6px 10px;
+    font-size: .86rem
+}
+
+.btn.ghost {
+    background: #0e1433;
+    border: 1px solid #22366b;
+    color: #cfd7ff;
+}
+
+.btn.ok {
+    background: linear-gradient(180deg, #19be82, #0d9b67)
+}
+
+.btn.danger {
+    background: linear-gradient(180deg, #ff4d4d, #d93a3a)
+}
+
+.main {
+    padding: 16px;
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 5rem;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--stroke);
+    border-radius: 12px;
+    margin: 12px 0;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .25);
+    overflow: hidden;
+}
+
+.card .head {
+    padding: 10px 14px;
+    background: var(--card2);
+    border-bottom: 1px solid var(--stroke);
+    font-weight: 700;
+}
+
+.card .body {
+    padding: 12px 14px
+}
+
+.form {
+    display: grid;
+    gap: 12px
+}
+
+.row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px
+}
+
+@media (max-width:640px) {
+    .row {
+        grid-template-columns: 1fr
+    }
+}
+
+label {
+    display: block;
+    margin: 0 0 6px 2px;
+    color: #cfd7ff;
+    font-size: .9rem
+}
+
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 11px 12px;
+    border-radius: 10px;
+    color: #eaf3ff;
+    background: #0e1433;
+    border: 1px solid #233a70;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #3b63ff;
+    box-shadow: 0 0 0 2px rgba(59, 99, 255, .25)
+}
+
+input::placeholder {
+    color: #8597c9
+}
+
+fieldset {
+    border: 1px dashed #25407a;
+    padding: 12px;
+    border-radius: 12px
+}
+
+.list {
+    display: grid;
+    gap: 12px
+}
+
+.item {
+    border: 1px solid #22366b;
+    border-radius: 12px;
+    padding: 12px;
+    background: #0f1a3a
+}
+
+.meta {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    color: #cfd7ff;
+    font-size: .9rem
+}
+
+.badge {
+    display: inline-flex;
+    gap: 6px;
+    align-items: center;
+    padding: 6px 10px;
+    border-radius: 12px;
+    border: 1px solid #2a3c7a;
+    background: #121e46;
+}
+
+.badge.ok {
+    border-color: #11663e;
+    background: #0d2b22;
+    color: #b7ffd3
+}
+
+.badge.warn {
+    border-color: #7a5c14;
+    background: #2a210c;
+    color: #ffe8a6
+}
+
+.badge.danger {
+    border-color: #7a1e1e;
+    background: #2a0d0d;
+    color: #ffb3b3
+}
+
+.actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 8px
+}
+
+.empty {
+    padding: 14px;
+    color: #9ba5db;
+    border: 1px dashed #2a326a;
+    border-radius: 12px;
+    background: #0d1332;
+}
+
+/* ========= Abas (navbar inferior) ========= */
+.bottom {
+    display: flex;
+    width: 60%;
+    gap: 3rem;
+    border-radius: 12px;
+}
+
+.tabs-bottom {
+    display: flex;
+    flex-direction: row;
+    gap: 3rem;
+    padding: 10px
+}
+
+.tabs-bottom a {
+    display: block;
+    text-align: center;
+    padding: 10px 6px;
+    border-radius: 12px;
+    border: 1px solid #22366b;
+    color: #cbd4ffb0;
+    background: #0e1433;
+    text-decoration: none;
+    transition: transform .1s ease, background .12s ease, color .12s ease;
+    width: 9rem;
+}
+
+.tabs-bottom a:hover {
+    transform: translateY(-1px)
+}
+
+.tabs-bottom a.active {
+    border-color: #2b3480;
+    color: #fff;
+    background: linear-gradient(180deg, #151f4b, #111943)
+}
+
+/* ========= Toast ========= */
+.toast {
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+    z-index: 100;
+    background: #0d2c7e;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 8px;
+    display: none;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, .35);
+}
+
+/* ========= Tabelas genéricas (relatórios) ========= */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    overflow: hidden;
+    border: 1px solid #213669;
+    border-radius: 12px
+}
+
+.table th,
+.table td {
+    padding: 10px 12px;
+    border-bottom: 1px solid #1e315b
+}
+
+.table thead th {
+    background: #111a3d;
+    color: #dbe5ff;
+    text-align: left;
+    font-weight: 800
+}
+
+.table tbody tr:hover {
+    background: #0e1b39
+}
+
+/* ======= Complementos responsivos (ADICIONAR AO FINAL) ======= */
+
+/* evita quebra de layout com imagens/gráficos */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 1) Topbar: permite quebrar em 2 linhas no mobile */
+@media (max-width: 980px) {
+    .topbar-app {
+        flex-wrap: wrap;
+        padding-bottom: 8px;
+    }
+}
+
+/* 2) Navegação de abas: vira trilho com rolagem no mobile */
+@media (max-width: 980px) {
+    .bottom {
+        width: 100%;
+    }
+
+    /* já existe, só garantimos */
+    .tabs-bottom {
+        gap: 10px;
+        overflow-x: auto;
+        /* rolagem horizontal */
+        -webkit-overflow-scrolling: touch;
+        scroll-snap-type: x proximity;
+        padding-bottom: 2px;
+        /* não cortar brilho das abas */
+    }
+
+    .tabs-bottom a {
+        flex: 0 0 auto;
+        /* não encolher demais */
+        min-width: 110px;
+        /* área confortável de toque */
+        width: auto;
+        /* sobrepõe width: 9rem se faltar espaço */
+        scroll-snap-align: center;
+    }
+}
+
+/* 3) Formulários: coluna única + botões “full width” */
+@media (max-width: 820px) {
+    .row {
+        grid-template-columns: 1fr;
+    }
+
+    .btn {
+        width: 100%;
+    }
+}
+
+/* 4) Mobile pequeno: esconde o pill para caber melhor */
+@media (max-width: 420px) {
+    .pill {
+        display: none;
+    }
+}
+
+/* 5) Espaçamento do conteúdo quando nav está no header
+      (evita que as abas encostem no primeiro card ao quebrar linha) */
+@media (max-width: 980px) {
+    .main {
+        padding-top: 8px;
+    }
+}
+
+/* 6) Toast adaptável no celular */
+@media (max-width: 640px) {
+    .toast {
+        width: min(92vw, 520px);
+        text-align: center;
+    }
+}
+
+/* 7) Tabelas roláveis no mobile (envolva a <table> com .table-wrap) */
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+@media (max-width: 768px) {
+    .table {
+        min-width: 640px;
+    }
+
+    /* evita “amassar” colunas */
+}
+
+/* 8) Paisagem/altura baixa (teclado aberto, etc.) */
+@media (max-height: 480px) {
+    .toast {
+        bottom: 10px;
+    }
+}

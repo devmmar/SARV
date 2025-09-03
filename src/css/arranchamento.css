@@ -1,0 +1,52 @@
+/* ====== Arranchamento (página do militar) ====== */
+
+#resForm .row>div {
+    display: flex;
+    flex-direction: column
+}
+
+#resForm button.btn {
+    margin-top: 4px
+}
+
+#lista .item {
+    display: flex;
+    flex-direction: column
+}
+
+#lista .meta {
+    margin-bottom: 8px
+}
+
+#lista .actions .btn.small {
+    padding: 6px 10px
+}
+
+#lista .badge+.badge {
+    margin-left: 2px
+}
+
+/* estados de status visuais (além das .ok/.warn globais) */
+.badge.STATUS-DEFERIDA {
+    border-color: #0e6b4a;
+    background: #0d2b22;
+    color: #b7ffd3
+}
+
+.badge.STATUS-PENDENTE {
+    border-color: #5f4a0f;
+    background: #2a210c;
+    color: #ffe8a6
+}
+
+.badge.STATUS-INDEFERIDA {
+    border-color: #7a1e1e;
+    background: #2a0d0d;
+    color: #ffb3b3
+}
+
+.badge.STATUS-CANCELADA {
+    border-color: #33415e;
+    background: #0d1332;
+    color: #bcc8f7
+}

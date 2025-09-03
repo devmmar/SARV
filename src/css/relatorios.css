@@ -1,0 +1,44 @@
+/* ====== Painel do Furriel ====== */
+
+.filter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px
+}
+
+@media (max-width:720px) {
+    .filter-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+.helper {
+    color: #cbd4ffb0;
+    margin-top: 6px
+}
+
+#pendentes .item {
+    display: flex;
+    flex-direction: column
+}
+
+#pendentes .meta {
+    margin-bottom: 8px
+}
+
+#pendentes .actions {
+    display: flex;
+    gap: 8px
+}
+
+#pendentes .btn.small {
+    padding: 6px 10px
+}
+
+.btn-deferir {
+    background: linear-gradient(180deg, #19be82, #0d9b67)
+}
+
+.btn-indeferir {
+    background: linear-gradient(180deg, #ff4d4d, #d93a3a)
+}

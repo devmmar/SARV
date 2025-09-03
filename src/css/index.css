@@ -1,0 +1,32 @@
+.login-box {
+    border: 2px solid #0ea5ff;
+    border-radius: 12px;
+    padding: 22px;
+    margin: 50px auto;
+    max-width: 520px;
+    background: #0a1826cc;
+    text-align: center;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, .28);
+}
+
+.login-box h1 {
+    margin-bottom: 12px
+}
+
+.login-form {
+    display: grid;
+    gap: 12px;
+    max-width: 380px;
+    margin: 16px auto 0
+}
+
+.login-links {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-top: 12px
+}
+
+.login-links a {
+    color: #c8d6ff
+}

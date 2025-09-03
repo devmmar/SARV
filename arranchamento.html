@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Arranchamento</title>
+    <link rel="stylesheet" href="src/css/base.css">
+    <link rel="stylesheet" href="src/css/arranchamento.css">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="src/js/core.js"></script>
+    <script defer src="src/js/arranchamento.js"></script>
+</head>
+
+<body>
+    <div class="interface">
+        <header class="topbar-app">
+            <div class="brand-mini"><img src="src/assets/logo.png"><b>SARV</b></div>
+            <div class="pill" id="sessionPill"></div>
+            <nav class="bottom">
+                <div class="tabs-bottom">
+                    <a class="active" href="home.html">Início</a>
+                    <a href="arranchamento.html">Refeições</a>
+                    <a href="relatorios.html">Relatórios</a>
+                    <a href="perfil.html">Perfil</a>
+                </div>
+            </nav>
+            <button id="logoutBtn" class="btn small">Sair</button>
+        </header>
+    </div>
+
+    <main class="main">
+        <section class="card">
+            <div class="head"><b>Reservar Refeição</b></div>
+            <div class="body">
+                <form id="resForm" class="form">
+                    <div class="row">
+                        <div><label>Data</label><input name="data" type="date" required></div>
+                        <div><label>Refeição</label>
+                            <select name="refeicao">
+                                <option value="CAFE">Café</option>
+                                <option value="ALMOCO">Almoço</option>
+                                <option value="JANTA">Janta</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn" type="submit">Reservar</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="head"><b>Minhas Reservas</b></div>
+            <div class="body">
+                <div id="lista" class="list"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+</body>
+
+</html>
