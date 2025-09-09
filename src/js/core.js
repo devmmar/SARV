@@ -25,8 +25,16 @@ if (!window.supa) {
 
 // ====== FORMATADORES ======
 window.fmt = {
-  date: (d) => new Date(d).toLocaleDateString("pt-BR"),
-  datetime: (d) => new Date(d).toLocaleString("pt-BR"),
+  // aceita "YYYY-MM-DD" ou "YYYY-MM-DDTHH:mm:ssZ"
+  date: (v) => {
+    if (!v) return '';
+    const s = String(v);
+    const iso = s.length >= 10 ? s.slice(0,10) : s; // pega só YYYY-MM-DD
+    const [Y,M,D] = iso.split('-');
+    if (!Y || !M || !D) return s;
+    return `${D}/${M}/${Y}`;
+  },
+  datetime: (v) => new Date(v).toLocaleString('pt-BR'), // use só para horários
 };
 
 // ====== AUTENTICAÇÃO BÁSICA ======

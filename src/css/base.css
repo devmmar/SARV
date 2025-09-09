@@ -8,9 +8,11 @@
 html,
 body {
     height: 100%;
+    margin: 0;
 }
 
 body {
+    margin: 0;
     font: 500 15px/1.45 system-ui, -apple-system, Segoe UI, Roboto, Arial;
     background-image: url("../assets/fundo.png");
     background-repeat: no-repeat;
@@ -20,6 +22,33 @@ body {
     color: #eaf2ff;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* Wrapper com GRID resolve o “flutuar” sem usar flex no body */
+.page {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* header | conteúdo | footer */
+}
+
+.main {
+  padding: 16px;
+  margin-top: 5rem; /* mantém espaço abaixo do header fixo */
+  /* remove max-width e margin:auto */
+}
+
+/* footer normal, sem position/fixed */
+.footer {
+  text-align: center;
+  padding: 15px;
+  font-size: 14px;
+  color: #cfd7ff;
+  border-top: 1px solid var(--stroke);
+  background: rgba(15,23,42,.35);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  width: 100%;
 }
 
 :root {
@@ -123,11 +152,11 @@ body {
     background: linear-gradient(180deg, #ff4d4d, #d93a3a)
 }
 
-.main {
-    padding: 16px;
-    max-width: 1000px;
-    margin: 0 auto;
-    margin-top: 5rem;
+.main{
+  padding: 16px;
+  width: 100%;
+  max-width: var(--container);
+  margin: 5rem auto 0;    
 }
 
 .card {
@@ -344,6 +373,7 @@ fieldset {
 .table tbody tr:hover {
     background: #0e1b39
 }
+
 
 /* ======= Complementos responsivos (ADICIONAR AO FINAL) ======= */
 

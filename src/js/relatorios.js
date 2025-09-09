@@ -83,8 +83,7 @@
         if (!data?.length) return toast('Nenhum registro para exportar.');
 
         const linhas = data.map(r => ({
-            "Nome": r.nome || `${(r.pg || '').toUpperCase()} ${(r.nome_guerra || '').toUpperCase()}`,
-            "Email": r.email || '',
+            "Nome": `${(r.pg || '').toUpperCase()} ${(r.nome_guerra || '').toUpperCase()}`,
             "Data": r.data,
             "Refeição": r.refeicao,
             "Status": r.status
