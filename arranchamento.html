@@ -14,19 +14,33 @@
 
 <body>
     <div class="interface">
-        <header class="topbar-app">
-            <div class="brand-mini"><img src="src/assets/logo.png"><b>SARV</b></div>
-            <div class="pill" id="sessionPill"></div>
-            <nav class="bottom">
-                <div class="tabs-bottom">
-                    <a class="active" href="home.html">Início</a>
-                    <a href="arranchamento.html">Refeições</a>
-                    <a href="relatorios.html">Relatórios</a>
-                    <a href="perfil.html">Perfil</a>
+        <header class="topbar-app" id="topbarApp">
+                <div class="brand-mini">
+                    <img src="src/assets/logo.png" alt="SARV">
+                    <b>SARV</b>
                 </div>
-            </nav>
-            <button id="logoutBtn" class="btn small">Sair</button>
-        </header>
+
+                <!-- Botão hambúrguer (visível só no mobile) -->
+                <button id="menuBtn" class="hamburger" aria-label="Abrir menu" aria-controls="primaryNav"
+                    aria-expanded="false" type="button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
+                <div class="pill" id="sessionPill"></div>
+
+                <nav class="bottom" id="primaryNav">
+                    <div class="tabs-bottom">
+                        <a class="active" href="home.html">Início</a>
+                        <a href="arranchamento.html">Refeições</a>
+                        <a href="relatorios.html">Relatórios</a>
+                        <a href="perfil.html">Perfil</a>
+                    </div>
+                </nav>
+
+                <button id="logoutBtn" class="btn small">Sair</button>
+            </header>
     </div>
 
     <main class="main">

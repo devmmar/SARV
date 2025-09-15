@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Registro de Viagens</title>
+    <link rel="stylesheet" href="src/css/base.css">
+    <link rel="stylesheet" href="src/css/arranchamento.css">
+    <script src="https://unpkg.com/@supabase/supabase-js@2"></script>
+    <script src="src/js/core.js"></script>
+    <script defer src="src/js/viagens.js"></script>
+</head>
+
+<body>
+    <div class="interface">
+        <header class="topbar-app" id="topbarApp">
+            <div class="brand-mini">
+                <img src="src/assets/logo.png" alt="SARV">
+                <b>SARV</b>
+            </div>
+
+            <!-- Botão hambúrguer (visível só no mobile) -->
+            <button id="menuBtn" class="hamburger" aria-label="Abrir menu" aria-controls="primaryNav"
+                aria-expanded="false" type="button">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <div class="pill" id="sessionPill"></div>
+
+            <nav class="bottom" id="primaryNav">
+                <div class="tabs-bottom">
+                    <a href="home.html">Início</a>
+                    <a href="arranchamento.html">Refeições</a>
+                    <a href="relatorios.html">Relatórios</a>
+                    <a href="viagens.html" class="active">Viagens</a>
+                    <a href="perfil.html">Perfil</a>
+                </div>
+            </nav>
+
+            <button id="logoutBtn" class="btn small">Sair</button>
+        </header>
+    </div>
+
+    <main class="main">
+        <section class="card">
+            <div class="head"><b>Registrar Viagem</b></div>
+            <div class="body">
+                <form id="resForm" class="form">
+                    <div class="row">
+                        <div>
+                            <label>Data de Ida</label>
+                            <input name="data_ida" type="date" required>
+                        </div>
+                        <div>
+                            <label>Data de Volta</label>
+                            <input name="data_volta" type="date" required>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div>
+                            <label>Cidade de Destino</label>
+                            <input name="cidade" type="text" placeholder="Ex: Porto Alegre" required>
+                        </div>
+                        <div>
+                            <label>Estado</label>
+                            <select name="estado" required>
+                                <option value="">Selecione...</option>
+                                <option value="AC">AC</option>
+                                <option value="AL">AL</option>
+                                <option value="AP">AP</option>
+                                <option value="AM">AM</option>
+                                <option value="BA">BA</option>
+                                <option value="CE">CE</option>
+                                <option value="DF">DF</option>
+                                <option value="ES">ES</option>
+                                <option value="GO">GO</option>
+                                <option value="MA">MA</option>
+                                <option value="MT">MT</option>
+                                <option value="MS">MS</option>
+                                <option value="MG">MG</option>
+                                <option value="PA">PA</option>
+                                <option value="PB">PB</option>
+                                <option value="PR">PR</option>
+                                <option value="PE">PE</option>
+                                <option value="PI">PI</option>
+                                <option value="RJ">RJ</option>
+                                <option value="RN">RN</option>
+                                <option value="RS">RS</option>
+                                <option value="RO">RO</option>
+                                <option value="RR">RR</option>
+                                <option value="SC">SC</option>
+                                <option value="SP">SP</option>
+                                <option value="SE">SE</option>
+                                <option value="TO">TO</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <button class="btn" type="submit">Registrar Viagem</button>
+                </form>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="head"><b>Minhas Viagens</b></div>
+            <div class="body">
+                <div id="lista" class="list"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="toast" class="toast"></div>
+</body>
+
+</html>

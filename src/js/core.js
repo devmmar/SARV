@@ -149,3 +149,40 @@ window.preencherPill = async (user) => {
     setTimeout(window.rejoinAll, 150);
   });
 })();
+
+document.addEventListener('DOMContentLoaded', () => {
+  const topbar = document.getElementById('topbarApp');
+  const btn = document.getElementById('menuBtn');
+  const nav = document.getElementById('primaryNav');
+
+  if (!topbar || !btn || !nav) return;
+
+  function closeMenu() {
+    topbar.classList.remove('is-open');
+    btn.setAttribute('aria-expanded', 'false');
+  }
+
+  function openMenu() {
+    topbar.classList.add('is-open');
+    btn.setAttribute('aria-expanded', 'true');
+  }
+
+  btn.addEventListener('click', () => {
+    const isOpen = topbar.classList.contains('is-open');
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  // Fecha ao clicar num link do menu (UX melhor em mobile)
+  nav.addEventListener('click', (e) => {
+    const target = e.target;
+    if (target && target.tagName === 'A') {
+      closeMenu();
+    }
+  });
+
+  // Se redimensionar para desktop, garante menu fechado/estado limpo
+  const MQ = window.matchMedia('(min-width: 981px)');
+  MQ.addEventListener('change', (ev) => {
+    if (ev.matches) closeMenu();
+  });
+});

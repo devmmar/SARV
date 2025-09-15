@@ -17,17 +17,33 @@
 
 
         <div class="interface">
-            <header class="topbar-app">
-                <div class="brand-mini"><img src="src/assets/logo.png"><b>SARV</b></div>
+            <header class="topbar-app" id="topbarApp">
+                <div class="brand-mini">
+                    <img src="src/assets/logo.png" alt="SARV">
+                    <b>SARV</b>
+                </div>
+
+                <!-- Botão hambúrguer (visível só no mobile) -->
+                <button id="menuBtn" class="hamburger" aria-label="Abrir menu" aria-controls="primaryNav"
+                    aria-expanded="false" type="button">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+
                 <div class="pill" id="sessionPill"></div>
-                <nav class="bottom">
+
+                <nav class="bottom" id="primaryNav">
                     <div class="tabs-bottom">
-                        <a class="active" href="home.html">Início</a>
-                        <a href="arranchamento.html">Refeições</a>
-                        <a href="relatorios.html">Relatórios</a>
-                        <a href="perfil.html">Perfil</a>
+                        <a  href="home.html">Início</a>
+                        <a  href="arranchamento.html">Refeições</a>
+                        <a  href="viagens.html">Viagens</a>
+                        <a  href="relatorios.html">Relatórios</a>
+                        <a  href="perfil.html">Perfil</a>
+                        
                     </div>
                 </nav>
+
                 <button id="logoutBtn" class="btn small">Sair</button>
             </header>
         </div>
@@ -36,50 +52,50 @@
         <main class="main">
 
 
-                <section class="card">
-                    <div class="head"><b>Início</b></div>
-                    <div class="body">
-                        <div class="tile-grid">
-                            <a class="tile" href="arranchamento.html">
-                                <div class="tile-title">Arranchamento</div>
-                                <div class="tile-desc">Reservar refeições</div>
-                            </a>
-                            <a class="tile" href="relatorios.html">
-                                <div class="tile-title">Relatórios</div>
-                                <div class="tile-desc">Aprovar/Exportar (Furriel)</div>
-                            </a>
-                            <a class="tile" href="perfil.html">
-                                <div class="tile-title">Perfil</div>
-                                <div class="tile-desc">Seus dados</div>
-                            </a>
-                        </div>
+            <section class="card">
+                <div class="head"><b>Início</b></div>
+                <div class="body">
+                    <div class="tile-grid">
+                        <a class="tile" href="arranchamento.html">
+                            <div class="tile-title">Arranchamento</div>
+                            <div class="tile-desc">Reservar refeições</div>
+                        </a>
+                        <a class="tile" href="relatorios.html">
+                            <div class="tile-title">Relatórios</div>
+                            <div class="tile-desc">Aprovar/Exportar (Furriel)</div>
+                        </a>
+                        <a class="tile" href="perfil.html">
+                            <div class="tile-title">Perfil</div>
+                            <div class="tile-desc">Seus dados</div>
+                        </a>
                     </div>
-                </section>
+                </div>
+            </section>
 
-                <section class="card">
-                    <div class="head"><b>Notificações</b></div>
-                    <div class="body">
-                        <div class="actions" style="display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap">
-                            <button class="btn small ghost" onclick="excluirLidas()">Excluir lidas</button>
-                            <button class="btn small danger" onclick="excluirTodas()">Excluir todas</button>
-                        </div>
-                        <div id="notifs" class="list"></div>
+            <section class="card">
+                <div class="head"><b>Notificações</b></div>
+                <div class="body">
+                    <div class="actions" style="display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap">
+                        <button class="btn small ghost" onclick="excluirLidas()">Excluir lidas</button>
+                        <button class="btn small danger" onclick="excluirTodas()">Excluir todas</button>
                     </div>
-                </section>
+                    <div id="notifs" class="list"></div>
+                </div>
+            </section>
 
-                <section class="card">
-                    <div class="head"><b>Histórico recente de refeições</b></div>
-                    <div class="body">
-                        <div class="actions" style="display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap">
-                            <button class="btn small ghost" onclick="excluirHistoricoCanceladas()">Excluir
-                                canceladas</button>
-                            <button class="btn small danger" onclick="excluirHistoricoTudo()">Limpar histórico</button>
-                        </div>
-
-                        <div id="historico" class="list"></div>
+            <section class="card">
+                <div class="head"><b>Histórico recente de refeições</b></div>
+                <div class="body">
+                    <div class="actions" style="display:flex; gap:8px; margin-bottom:10px; flex-wrap:wrap">
+                        <button class="btn small ghost" onclick="excluirHistoricoCanceladas()">Excluir
+                            canceladas</button>
+                        <button class="btn small danger" onclick="excluirHistoricoTudo()">Limpar histórico</button>
                     </div>
-                </section>
-    
+
+                    <div id="historico" class="list"></div>
+                </div>
+            </section>
+
         </main>
 
 

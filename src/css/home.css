@@ -7,9 +7,9 @@
 .tile {
     display: block;
     text-decoration: none;
-    color: #eaf3ff;
-    background: #0e1730;
-    border: 1px solid #1a2d52;
+    color: #fafafa;
+    background: #0e381b;
+    border: none;
     border-radius: 14px;
     padding: 14px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, .25);
@@ -27,6 +27,6 @@
 }
 
 .tile-desc {
-    color: #b8c6ef;
+    color: #ffffff7d;
     font-size: .92rem
 }

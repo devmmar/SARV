@@ -1,10 +1,10 @@
 .login-box {
-    border: 2px solid #0ea5ff;
+    border: 2px solid #11663e;
     border-radius: 12px;
     padding: 22px;
     margin: 50px auto;
     max-width: 520px;
-    background: #0a1826cc;
+    background: #446c5a45;
     text-align: center;
     box-shadow: 0 12px 28px rgba(0, 0, 0, .28);
 }
@@ -29,4 +29,4 @@
 
 .login-links a {
     color: #c8d6ff
-}
+} 
